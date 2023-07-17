@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Make Purchase</title>
+</head>
+<body>
+    <h1>Make Purchase</h1>
+    <form method="post" action="{% url 'purchases:make_purchase' %}">
+        {% csrf_token %}
+        <label for="qr_code">QR Code:</label>
+        <input type="text" id="qr_code" name="qr_code" required>
+        <button type="submit">Make Purchase</button>
+    </form>
+</body>
+</html>
