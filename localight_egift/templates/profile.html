@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.first_name }}!</h1>
+    <p>Balance: ${{ user.balance }}</p>
+    <p>Points: {{ user.points }}</p>
+    <a href="{% url 'users:load_money' %}">Load Money</a>
+    <a href="{% url 'purchases:make_purchase' %}">Make Purchase</a>
+    <a href="{% url 'users:scan_qr_code' %}">Scan QR Code</a>
+    {% if user.balance >= 20 %}
+        <a href="{% url 'purchases:purchase_gift_basket' %}">Purchase Gift Basket</a>
+    {% endif %}
+</body>
+</html>
