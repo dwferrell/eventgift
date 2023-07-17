@@ -372,3 +372,6 @@
 
 # 2023-07-16 19:16:01.872079
 +/commit localight_egift/templates/profile.html
+
+# 2023-07-16 19:16:16.837735
++/commit localight_egift/templates/scan_qr_code.html
