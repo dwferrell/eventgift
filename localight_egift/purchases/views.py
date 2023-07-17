@@ -17,3 +17,17 @@ def make_purchase(request):
         return render(request, 'purchase_success.html', {'purchase': purchase})
     else:
         return render(request, 'make_purchase.html')
+
+@login_required
+def purchase_gift_basket(request):
+    if request.method == 'POST':
+        user = get_object_or_404(User, pk=request.user.pk)
+        if user.balance < 20:
+            return render(request, 'purchase_gift_basket.html', {'error': 'Insufficient balance.'})
+        purchase = Purchase.objects.create(user=user, amount=20, gift_basket_id=1)
+        user.balance -= 20
+        user.points += 20 // 10
+        user.save()
+        return render(request, 'purchase_success.html', {'purchase': purchase})
+    else:
+        return render(request, 'purchase_gift_basket.html')
