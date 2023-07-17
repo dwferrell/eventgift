@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan QR Code</title>
+</head>
+<body>
+    <h1>Scan QR Code</h1>
+    <form method="post" action="{% url 'users:scan_qr_code' %}">
+        {% csrf_token %}
+        <label for="qr_code">QR Code:</label>
+        <input type="text" id="qr_code" name="qr_code" required>
+        <button type="submit">Scan QR Code</button>
+    </form>
+</body>
+</html>
