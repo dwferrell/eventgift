@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Load Money</title>
+</head>
+<body>
+    <h1>Load Money</h1>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    <form method="post" action="{% url 'users:load_money' %}">
+        {% csrf_token %}
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" min="10" required>
+        <button type="submit">Load Money</button>
+    </form>
+</body>
+</html>
