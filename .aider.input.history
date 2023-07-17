@@ -318,3 +318,6 @@
 
 # 2023-07-16 19:04:10.388189
 +OK, but the QR code should only open up the view for the user. From there they will need to tap "Pay" to use the balance in their LocalCash account. Please proceed to create or update files.
+
+# 2023-07-16 19:07:03.250122
++OK, does that Scan QR code button instantiate a device's photo app? We can assume that all users are accessing from their smartphone, Android or iPhone. Please update accordingly. 
